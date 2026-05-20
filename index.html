@@ -1,0 +1,466 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Greeshma</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet"><style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:radial-gradient(circle at top,#2a002f,#000);
+color:white;
+overflow-x:hidden;
+cursor:none;
+}
+
+body::before{
+content:'';
+position:fixed;
+inset:0;
+background:radial-gradient(circle at center,rgba(255,105,180,0.15),transparent 60%);
+animation:bgMove 8s ease-in-out infinite;
+pointer-events:none;
+z-index:-1;
+}
+
+@keyframes bgMove{
+0%,100%{transform:scale(1) translateY(0px);}
+50%{transform:scale(1.2) translateY(-30px);}
+}
+
+.cursor{
+position:fixed;
+width:40px;
+height:40px;
+pointer-events:none;
+font-size:28px;
+z-index:9999;
+transform:translate(-50%,-50%);
+transition:transform 0.1s linear;
+}
+
+section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+position:relative;
+padding:80px 20px;
+overflow:hidden;
+}
+
+.stars span{
+position:absolute;
+color:white;
+animation:twinkle 3s infinite alternate;
+opacity:0.8;
+}
+
+@keyframes twinkle{
+from{opacity:0.2;transform:scale(0.8);}
+to{opacity:1;transform:scale(1.2);}
+}
+
+.title{
+font-size:clamp(3rem,8vw,8rem);
+font-weight:800;
+text-align:center;
+background:linear-gradient(90deg,#fff,#ff8fd8,#fff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:glow 4s linear infinite;
+}
+
+@keyframes glow{
+0%{filter:drop-shadow(0 0 10px #ff69b4);}
+50%{filter:drop-shadow(0 0 40px #ff69b4);}
+100%{filter:drop-shadow(0 0 10px #ff69b4);}
+}
+
+.glass{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:35px;
+padding:50px;
+max-width:900px;
+text-align:center;
+box-shadow:0 0 60px rgba(255,105,180,0.12);
+position:relative;
+}
+
+.message{
+font-size:clamp(2rem,5vw,5rem);
+font-weight:700;
+line-height:1.3;
+}
+
+.small{
+margin-top:20px;
+font-size:1.2rem;
+opacity:0.8;
+}
+
+.floating-cat{
+position:absolute;
+font-size:5rem;
+opacity:0.9;
+animation:float 5s ease-in-out infinite;
+}
+
+.cat1{top:15%;left:5%;}
+.cat2{bottom:10%;right:5%;animation-delay:2s;}
+.cat3{top:40%;right:10%;animation-delay:1s;}
+
+@keyframes float{
+0%,100%{transform:translateY(0px) rotate(0deg);}
+50%{transform:translateY(-25px) rotate(5deg);}
+}
+
+.transition-wave{
+position:absolute;
+bottom:-120px;
+width:120%;
+height:250px;
+background:radial-gradient(circle,#ff4fa355,transparent 70%);
+filter:blur(60px);
+}
+
+.candles{
+display:flex;
+gap:20px;
+margin-top:40px;
+justify-content:center;
+}
+
+.candle{
+position:relative;
+font-size:5rem;
+transition:0.3s;
+}
+
+.flame{
+position:absolute;
+top:-25px;
+left:50%;
+transform:translateX(-50%);
+font-size:2rem;
+animation:flicker 0.15s infinite alternate;
+}
+
+@keyframes flicker{
+from{transform:translateX(-50%) scale(1);opacity:1;}
+to{transform:translateX(-50%) scale(1.15);opacity:0.7;}
+}
+
+.smoke{
+position:absolute;
+font-size:2rem;
+left:50%;
+top:-30px;
+transform:translateX(-50%);
+animation:smokeRise 1s forwards;
+}
+
+@keyframes smokeRise{
+from{opacity:1;transform:translate(-50%,0);}
+to{opacity:0;transform:translate(-50%,-50px);}
+}
+
+.cake-scene{
+position:relative;
+margin-top:30px;
+}
+
+.cake{
+font-size:12rem;
+transition:1s;
+filter:drop-shadow(0 0 25px rgba(255,192,203,0.5));
+}
+
+.cake.cut{
+transform:scale(1.08) rotate(-2deg);
+}
+
+.knife{
+position:absolute;
+right:-80px;
+top:40%;
+font-size:5rem;
+animation:knifeMove 2s ease-in-out infinite;
+}
+
+@keyframes knifeMove{
+0%,100%{transform:translateY(0px);}
+50%{transform:translateY(-15px);}
+}
+
+.slice{
+display:none;
+font-size:6rem;
+animation:sliceDrop 1s forwards;
+}
+
+@keyframes sliceDrop{
+from{opacity:0;transform:translateY(-50px) rotate(-20deg);}
+to{opacity:1;transform:translateY(0px) rotate(0deg);}
+}
+
+button{
+padding:18px 35px;
+border:none;
+border-radius:50px;
+background:#ff4fa3;
+color:white;
+font-size:1.1rem;
+font-weight:700;
+margin-top:30px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+box-shadow:0 0 30px rgba(255,79,163,0.5);
+}
+
+.popup{
+position:fixed;
+inset:0;
+display:none;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,0.75);
+z-index:999;
+}
+
+.popup-content{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+padding:50px;
+border-radius:35px;
+max-width:700px;
+text-align:center;
+}
+
+.confetti{
+position:fixed;
+top:-10px;
+font-size:22px;
+animation:fall linear infinite;
+pointer-events:none;
+}
+
+@keyframes fall{
+to{transform:translateY(110vh) rotate(360deg);}
+}
+
+.ticker{
+position:fixed;
+bottom:0;
+width:100%;
+background:#111;
+padding:10px;
+white-space:nowrap;
+overflow:hidden;
+z-index:50;
+}
+
+.ticker span{
+display:inline-block;
+animation:ticker 20s linear infinite;
+color:#ffb3d9;
+font-weight:600;
+}
+
+@keyframes ticker{
+from{transform:translateX(100%);}
+to{transform:translateX(-100%);}
+}
+
+.paw{
+position:absolute;
+font-size:2rem;
+pointer-events:none;
+animation:fade 1s forwards;
+}
+
+@keyframes fade{
+to{opacity:0;transform:scale(2);}
+}
+</style></head>
+<body><div class="cursor">🐾</div><audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=cat-meow-14536.mp3" type="audio/mp3">
+</audio><div class="stars" id="stars"></div><section>
+<div class="floating-cat cat1">🐱</div>
+<div class="floating-cat cat2">🐈‍⬛</div>
+<div class="floating-cat cat3">🐾</div><h1 class="title">Happy Birthday Greeshma</h1>
+<p class="small">A cat-approved birthday experience ✨</p><div class="transition-wave"></div>
+</section><section>
+<div class="floating-cat cat1">✨</div>
+<div class="floating-cat cat2">🐱</div><div class="glass">
+<h1 class="message">🐱 Meow Meow Meow 🐱</h1>
+<p class="small">Translation: Happy Birthday Bhai 🎂</p>
+</div><div class="transition-wave"></div>
+</section><section>
+<div class="glass">
+<h1 class="message">Another year older.<br>Still chaotic.<br>Still iconic 😭🐾</h1>
+</div><div class="transition-wave"></div>
+</section><section>
+<div class="glass">
+<h1 class="message">All cats around the world gathered today to wish you ✨</h1>
+<p class="small">Even the orange cats shared their single brain cell 🐾</p>
+</div>
+</section><section>
+<div class="glass">
+<h1 class="message">💨 Blow the candles 💨</h1>
+<div class="candles" id="candles">
+<div class="candle" onclick="blowOne(this)">🕯️<div class="flame">🔥</div></div>
+<div class="candle" onclick="blowOne(this)">🕯️<div class="flame">🔥</div></div>
+<div class="candle" onclick="blowOne(this)">🕯️<div class="flame">🔥</div></div>
+<div class="candle" onclick="blowOne(this)">🕯️<div class="flame">🔥</div></div>
+<div class="candle" onclick="blowOne(this)">🕯️<div class="flame">🔥</div></div>
+</div>
+<p class="small">Tap candles one by one 💨</p>
+</div>
+</section><section>
+<div class="glass">
+<div class="cake" id="cake">🎂<div class="knife">🔪</div></div>
+<button onclick="sliceCake()">Cut the Cake 🎂</button>
+<div class="slice" id="slice">🍰</div>
+</div>
+</section><section>
+<div class="glass">
+<h1 class="message">🐾 The Cat Council Approves This Birthday 🎂</h1>
+<p class="small">Elite cat energy activated ✨</p>
+<button onclick="showPopup()">Open Final Message</button>
+</div>
+</section><div class="popup" id="popup">
+<div class="popup-content">
+<h1>💖 Happy Birthday Greeshma 💖</h1>
+<p>
+Hope your day is filled with happiness,<br>
+cat vibes,<br>
+good memories,<br>
+and lots of cake 🎂🐱<br><br>
+Stay happy always Bhai ✨
+</p><button onclick="closePopup()">Close</button>
+
+</div>
+</div><div class="ticker">
+<span>
+🐾 Cat-approved birthday vibes only • Happy Birthday Greeshma 🎂 • Infinite happiness activated ✨ • Feed the cats immediately 🐱 •
+</span>
+</div><script>
+for(let i=0;i<100;i++){
+const star=document.createElement('span');
+star.innerHTML='✦';
+star.style.left=Math.random()*100+'vw';
+star.style.top=Math.random()*100+'vh';
+star.style.fontSize=Math.random()*12+'px';
+document.getElementById('stars').appendChild(star);
+}
+
+for(let i=0;i<120;i++){
+const conf=document.createElement('div');
+conf.classList.add('confetti');
+conf.innerHTML=['🎉','✨','💖','🐾'][Math.floor(Math.random()*4)];
+conf.style.left=Math.random()*100+'vw';
+conf.style.animationDuration=(Math.random()*6+5)+'s';
+document.body.appendChild(conf);
+}
+
+function blowOne(candle){
+const flame=candle.querySelector('.flame');
+if(flame){
+flame.remove();
+
+const smoke=document.createElement('div');
+smoke.classList.add('smoke');
+smoke.innerHTML='💨';
+candle.appendChild(smoke);
+
+setTimeout(()=>{
+smoke.remove();
+},1000);
+}
+
+const remaining=document.querySelectorAll('.flame').length;
+
+if(remaining===0){
+setTimeout(()=>{
+for(let i=0;i<50;i++){
+const burst=document.createElement('div');
+burst.classList.add('confetti');
+burst.innerHTML=['🎉','✨','🐾'][Math.floor(Math.random()*3)];
+burst.style.left=Math.random()*100+'vw';
+burst.style.animationDuration='3s';
+document.body.appendChild(burst);
+}
+alert('🐱 All candles blown! Birthday magic activated ✨');
+},500);
+}
+}
+
+function sliceCake(){
+const cake=document.getElementById('cake');
+const slice=document.getElementById('slice');
+
+cake.classList.add('cut');
+
+setTimeout(()=>{
+slice.style.display='block';
+},700);
+
+setTimeout(()=>{
+const catMsg=document.createElement('div');
+catMsg.innerHTML='🐱 sharing is caring';
+catMsg.style.position='fixed';
+catMsg.style.top='20px';
+catMsg.style.left='50%';
+catMsg.style.transform='translateX(-50%)';
+catMsg.style.background='rgba(255,255,255,0.1)';
+catMsg.style.padding='15px 25px';
+catMsg.style.borderRadius='30px';
+catMsg.style.backdropFilter='blur(10px)';
+catMsg.style.zIndex='999';
+document.body.appendChild(catMsg);
+
+setTimeout(()=>catMsg.remove(),3000);
+},1200);
+}
+
+function showPopup(){
+document.getElementById('popup').style.display='flex';
+}
+
+function closePopup(){
+document.getElementById('popup').style.display='none';
+}
+
+const cursor=document.querySelector('.cursor');
+document.addEventListener('mousemove',(e)=>{
+cursor.style.left=e.clientX+'px';
+cursor.style.top=e.clientY+'px';
+});
+
+document.addEventListener('click',(e)=>{
+const paw=document.createElement('div');
+paw.classList.add('paw');
+paw.innerHTML='🐾';
+paw.style.left=e.pageX+'px';
+paw.style.top=e.pageY+'px';
+document.body.appendChild(paw);
+
+setTimeout(()=>{
+paw.remove();
+},1000);
+});
+</script></body>
+</html>
